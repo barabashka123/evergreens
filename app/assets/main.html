@@ -1,0 +1,90 @@
+
+
+<section class="topBlock">
+    <menu>
+        <ul>
+            <li><a ui-sref="app.nagro">Нагро-удобрение <span class="triangle"></span></a></li>
+            <li><a ui-sref="app.bio">Биодизель  <span class="triangle"></span></a></li>
+            <li><a ui-sref="app.sulk">Силко <span class="triangle"></span></a></li>
+            <li><a ui-sref="app.shop">Интернет магазин  <span class="triangle"></span></a></li>
+            <li><a ui-sref="app.answers">Вопроси-ответи  <span class="triangle"></span></a></li>
+            <li><a ui-sref="app.contact">Контакти  <span class="triangle"></span></a></li>
+            <li class="aa"><a ui-sref="app.cart"><span class="cart"></span> Корзина</a></li>
+        </ul>
+    </menu>
+</section>
+
+<section class="bottomBlock">
+    <section class="leftBlock">
+
+    </section>
+    <section class="rigthBlock">
+        <div class="wrapperForm">
+            <div class="form">
+
+                <p class="title">Посчитайте прибиль</p>
+                <p class="secondTitle">Добриво продуктивнее химии</p>
+                <div class="line"></div>
+
+                <div class="wrapper">
+                    <p>Виберите культутру</p>
+                    <select ng-model="product.select" required>
+                        <option value=""  selected class="defaultSelect">--Select--</option>
+                        <option ng-repeat="i in ['one', 'two', 'three', 'four']">{{i}}</option>
+                    </select>
+                </div>
+                <div class="wrapper">
+                    <p>Урожайность</p>
+                    <input type="number" ng-model="product.productivity"
+                           ng-class="{'invalid': product.productivity < 0}"
+                           placeholder="20"/>
+                </div>
+
+                <div class="wrapper">
+                    <p>Стоимость хим. удобрения</p>
+                    <input type="number" ng-model="product.price"
+                           ng-class="{'invalid': product.price < 0}"
+                           placeholder="3000"/>
+                </div>
+
+                <div class="wrapper">
+                    <p>Посевная площадь</p>
+                    <input type="number"
+                           ng-model="product.square"
+                           ng-class="{'invalid': product.square < 0}"
+                           placeholder="10"/>
+                </div>
+
+                <div class="line"></div>
+
+                <p ng-if="profit" class="result">Прибиль от добрива <br> <span class="profit">{{profit}}</span>
+                    <br><span class="ua">грн</span></p>
+
+            </div>
+        </div>
+
+    </section>
+</section>
+
+<!-- templates for navigate menu -->
+<script type="text/ng-template" id="templates/view1.html">
+    Нагро-удобрения
+</script>
+<script type="text/ng-template" id="templates/view2.html">
+    Биодизель
+</script>
+<script type="text/ng-template" id="templates/view3.html">
+    Силко
+</script>
+<script type="text/ng-template" id="templates/view4.html">
+    Интернет магазин
+</script>
+<script type="text/ng-template" id="templates/view5.html">
+    Вопроси - ответи
+</script>
+<script type="text/ng-template" id="templates/view6.html">
+    Контакти
+</script>
+<script type="text/ng-template" id="templates/view7.html">
+    Корзина
+</script>
